@@ -1,0 +1,19 @@
+version: "3"
+services:
+  testdb:
+    image: mdillon/postgis:10-alpine
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=test
+      - DB_URL=postgres://username:password@wiselydb/test
+    volumes:
+      - ./db-dump/:/docker-entrypoint-initdb.d/
+      # - ./packages/schema/container/:/docker-entrypoint-initdb.d/
+    ports:
+      - '5555:5432'
+    networks:
+      - backend
+networks:
+  backend:
+    external: true
