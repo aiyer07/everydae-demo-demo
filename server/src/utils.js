@@ -25,23 +25,25 @@ module.exports.createStore = () => {
       primaryKey: true,
       autoIncrement: true,
     },
-    createdAt: SQL.DATE,
-    updatedAt: SQL.DATE,
-    email: SQL.STRING,
-    token: SQL.STRING,
+    name: SQL.STRING
   });
 
-  const trips = db.define('trip', {
+  const questions = db.define('question', {
     id: {
       type: SQL.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    createdAt: SQL.DATE,
-    updatedAt: SQL.DATE,
-    launchId: SQL.INTEGER,
-    userId: SQL.INTEGER,
+    type: SQL.STRING
   });
 
-  return { users, trips };
+  const answers = db.define('answer', {
+    id: {
+      type: SQL.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    }
+  });
+
+  return { users, questions, answers };
 };
