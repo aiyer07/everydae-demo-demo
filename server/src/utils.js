@@ -12,6 +12,7 @@ module.exports.createStore = () => {
     port: '5555',
     logging: false,
   });
+  // db.sync({ logging: console.log })
   db.authenticate()
   .then(() => {
     console.log('Connection to database has been established successfully.');
@@ -26,24 +27,27 @@ module.exports.createStore = () => {
       autoIncrement: true,
     },
     name: SQL.STRING
-  });
+  }, {freezeTableName: true});
 
-  const questions = db.define('question', {
+  const question = db.define('question', {
     id: {
       type: SQL.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
     type: SQL.STRING
-  });
+  }, {freezeTableName: true});
 
-  const answers = db.define('answer', {
+  const answer = db.define('answer', {
     id: {
       type: SQL.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-    }
-  });
+    },
+    answerText: SQL.STRING,
+    percentCorrect: SQL.NUMERIC,
+    correct: SQL.BOOLEAN,
+  }, {freezeTableName: true});
 
-  return { users, questions, answers };
+  return { users, question, answer };
 };

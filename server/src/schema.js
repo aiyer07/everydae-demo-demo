@@ -3,7 +3,7 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
 
   type Query {
-    questions: [Question]
+    question: [Question]
     me: User
   }
 
@@ -20,10 +20,14 @@ const typeDefs = gql`
     id: ID!
     name: String
     type: String
+    answer: [Answer]
   }
   
   type Answer {
-    id: ID!
+    id: ID
+    answerText: String!
+    percentCorrect: Float
+    correct: Boolean
   }
   
   type UserAnswer {

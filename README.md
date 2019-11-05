@@ -11,11 +11,11 @@ docker-compose up -d
 ```
 
 ```bash
-cd /server && yarn && yarn start
+cd server && yarn && yarn start
 ```
 
 ```bash
-cd /client && yarn && yarn start
+cd client && yarn && yarn start
 ```
 
 ## Tech Stack Notables

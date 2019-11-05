@@ -7,8 +7,9 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import { ApolloProvider } from '@apollo/react-hooks';
-import resolvers from './resolvers'
-import typeDefs from './typedefs'
+import {resolvers} from './resolvers'
+import {typeDefs} from './typedefs'
+import gql from "graphql-tag";
 // Set up our apollo-client to point at the server we created
 // this can be local or a remote endpoint
 const cache = new InMemoryCache();
@@ -29,7 +30,7 @@ const client = new ApolloClient({
 ReactDOM.render(
 
   <ApolloProvider client={client} >
-    <App></App>
+    <App client={client}></App>
   </ApolloProvider>,
   document.getElementById('root'),
 );

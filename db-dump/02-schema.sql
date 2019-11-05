@@ -40,7 +40,9 @@ SET default_with_oids = false;
 CREATE TABLE public.answer (
     id integer NOT NULL,
     "questionId" integer,
-    "answerText" text
+    "answerText" text,
+    correct boolean DEFAULT false,
+    "percentCorrect" numeric
 );
 
 
@@ -237,14 +239,6 @@ ALTER TABLE ONLY public.user_answers
 
 ALTER TABLE ONLY public.users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
-
-
---
--- Name: answer answer_questionId_fkey; Type: FK CONSTRAINT; Schema: public; Owner: username
---
-
-ALTER TABLE ONLY public.answer
-    ADD CONSTRAINT "answer_questionId_fkey" FOREIGN KEY ("questionId") REFERENCES public.question(id);
 
 
 --

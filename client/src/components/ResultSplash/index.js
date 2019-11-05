@@ -23,7 +23,6 @@ const Container = styled.div`
 export default class ResultSplash extends React.Component {
   constructor (props) {
     super(props)
-    console.log(this.props.success)
   }
   
   componentDidMount () { 

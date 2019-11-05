@@ -19,7 +19,7 @@ class AnswerGroup extends React.Component {
     }
   }
 
-  answerSelected = (index) => {
+  answerSelected = (index, answer) => {
     // unselect last selected answer
     if (this.state.selectedIndex !== -1) {
       this.childElements[this.state.selectedIndex] = React.cloneElement(this.childElements[this.state.selectedIndex], {
@@ -27,7 +27,7 @@ class AnswerGroup extends React.Component {
       })
     }
     // update the index & new selected
-    this.props.onChangeAnswer(index)
+    this.props.onChangeAnswer(answer, index)
     this.childElements[index] = React.cloneElement(this.childElements[index], {
       selected: true
     })
