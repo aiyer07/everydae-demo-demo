@@ -1,6 +1,6 @@
 # Everydae demo... demo
 
-Trying out new libraries & frameworks, particularly react and graphql + apollo. This is a full stack app with a client, server and postgres database run in docker.
+Rebuilding a couple of screens from: https://ui-dev-demo.everydae.com/. Trying out new libraries & frameworks, particularly react and graphql + apollo. This is a full stack app with a client, server and postgres database run in docker. Meant to reflect: 
 
 ## Installation
 
