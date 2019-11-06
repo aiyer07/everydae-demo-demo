@@ -2,7 +2,7 @@
 
 Rebuilding a couple of screens from: https://ui-dev-demo.everydae.com/. Trying out new libraries & frameworks, particularly react and graphql + apollo. This is a full stack app with a client, server and postgres database run in docker. 
 
-![Alt Text](https://cl.ly/19db36daf536)
+![Alt Text](preview.gif)
 
 ## Installation
 
