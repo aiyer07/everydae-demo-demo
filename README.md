@@ -1,3 +1,5 @@
+I built this in a couple of days unprompted to test my ability with a tech stack I guessed everydae had prior to working there!
+
 # Everydae demo... demo
 
 Rebuilding a couple of screens from: https://ui-dev-demo.everydae.com/. Trying out new libraries & frameworks, particularly react and graphql + apollo. This is a full stack app with a client, server and postgres database run in docker. 
